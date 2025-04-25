@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .container span {
+            color: #ff9800;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: orange;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+        }
+
+        .btn {
+            background: orange;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            display: inline-block;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: none;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 130px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: orange;
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            padding-top: 100px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 100px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: orange;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .container h1 {
+                font-size: 40px;
+            }
+
+            .contact-form {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .contact-info {
+                font-size: 16px;
+            }
+
+            .content-wrapper {
+                padding-top: 120px;
+            }
+            .menu-toggle {
+                display: block;
+                color: white;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+           
+            .container {
+                padding: 60px 5%;
+                text-align: left;
+            }
+
+            .container h1 {
+                font-size: 30px;
+            }
+
+            .contact-form {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .contact-info {
+                font-size: 14px;
+            }
+
+            .content-wrapper {
+                padding-top: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 10px 3%;
+            }
+
+            .container h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                padding: 50px 3%;
+            }
+
+            .contact-form input, 
+            .contact-form textarea {
+                font-size: 14px;
+            }
+
+            .contact-form {
+                padding: 15px;
+            }
+
+            .social-icons a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" class="logo" alt="Logo">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="service.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <h1>Contact <span>Me</span></h1>
+            <p class="contact-info">
+                📧 Email: <a href="mailto:santuj261@gmail.com">santuj261@gmail.com</a> <br>
+            </p>
+
+            <div class="contact-form">
+                <form action="mailto:santj261@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Santu Jana | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="mailto:santj261@gmail.com">📧 Email</a>
+            <a href="#">🔗 LinkedIn</a>
+            <a href="#">🐦 Twitter</a>
+            <a href="#">📘 Facebook</a>
+            <a href="#">📸 Instagram</a>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: orange;
+        }
+
+        /* Responsive Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 10%;
+        }
+
+        .detel h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .detel span {
+            color: #ff9800;
+        }
+
+        .detel p {
+            font-size: 18px;
+            color: #ddd;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background: orange;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            display: inline-block;
+            border-radius: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .images {
+            margin-top: 40px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .images:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: orange;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: white;
+            }
+
+            .hero {
+                padding: 120px 5%;
+            }
+
+            .detel h1 {
+                font-size: 40px;
+            }
+
+            .images {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <img src="logo.png" class="logo" alt="Logo">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="service.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="detel">
+            <h1>I'm <span>SANTU JANA</span></h1>
+            <p>A passionate web developer focused on crafting beautiful and functional digital experiences.</p>
+            <a href=" #" class="btn" download>Download CV</a>
+
+        </div>
+
+        <div class="images">
+            <img src="santuj.jpg" .jpg alt="Santu Jana">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Santu Jana | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="mailto:santj261@gmail.com">📧 Email</a>
+
+            <a href="https://www.linkedin.com/in/santu-jana-a50804267" target="_blank">🔗 LinkedIn</a>
+            <a href="#">🐦 Twitter</a>
+            <a href="https://www.facebook.com/share/18hYrhRC74/">📘 Facebook</a>
+            <a href="https://www.instagram.com/santu_jana_12?igsh=MTd4enZkajAzZHV1bg==">📸 Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+    </script>
+
+</body>
+
+</html>

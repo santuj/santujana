@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Santu Jana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 10%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 130px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: orange;
+        }
+
+        /* Service Container */
+        .service-container {
+            text-align: center;
+            padding: 120px 10% 80px; /* Added top padding to avoid overlap with fixed navbar */
+        }
+
+        .service-container h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .service-container p {
+            font-size: 18px;
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Services Grid */
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .service-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .service-box h2 {
+            color: orange;
+            margin-bottom: 15px;
+        }
+
+        .service-box p {
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 10px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: orange;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: white;
+            }
+
+
+            .service-container {
+                padding: 100px 5%;
+            }
+
+            .service-container h1 {
+                font-size: 40px;
+            }
+
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-box {
+                width: 80%;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 5%;
+            }
+
+            .service-container {
+                padding: 80px 5%;
+            }
+
+            .service-container h1 {
+                font-size: 35px;
+            }
+
+            .service-container p {
+                font-size: 16px;
+            }
+
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-box {
+                width: 90%;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 10px 3%;
+            }
+
+            .service-container {
+                padding: 60px 3%;
+            }
+
+            .service-container h1 {
+                font-size: 30px;
+            }
+
+            .service-container p {
+                font-size: 14px;
+            }
+
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-box {
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            .social-icons a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" class="logo" alt="Logo">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="service.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="service-container">
+        <h1>My Services</h1>
+        <p>I provide high-quality services to help you build your online presence and grow your business.</p>
+
+        <div class="services">
+            <div class="service-box">
+                <h2>Web Development</h2>
+                <p>Creating responsive and dynamic websites using modern technologies.</p>
+            </div>
+
+            <div class="service-box">
+                <h2>Frontend Design</h2>
+                <p>Beautiful and user-friendly UI/UX design for an amazing user experience.</p>
+            </div>
+
+            <div class="service-box">
+                <h2>Backend Development</h2>
+                <p>Building secure and scalable server-side applications.</p>
+            </div>
+
+            <div class="service-box">
+                <h2>Excel</h2>
+                <p>Expertise in Excel for data analysis, reporting, and automation.</p>
+            </div>
+
+            <div class="service-box">
+                <h2>Database Management</h2>
+                <p>Ensuring efficient storage, retrieval, and management of data.</p>
+            </div>
+
+            <div class="service-box">
+                <h2>Data Analytics</h2>
+                <p>Providing insights and analytics to make data-driven decisions.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Santu Jana | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="mailto:santj261@gmail.com">📧 Email</a>
+            <a href="#">🔗 LinkedIn</a>
+            <a href="#">🐦 Twitter</a>
+            <a href="#">📘 Facebook</a>
+            <a href="#">📸 Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile {
+            width: 40%;
+            text-align: center;
+        }
+
+        .profile img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            width: 55%;
+        }
+
+        .about-content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .about-content span {
+            color: #ff9800;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: orange;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            display: inline-block;
+            border-radius: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 130px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: orange;
+        }
+
+        .content-wrapper {
+            padding-top: 100px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 250px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: orange;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 60px 5%;
+            }
+
+            .profile img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .about-content {
+                width: 80%;
+                text-align: center;
+            }
+
+            .about-content h1 {
+                font-size: 40px;
+            }
+
+            .about-content p {
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 10px 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: white;
+            }
+
+            .container {
+                padding: 50px 5%;
+            }
+
+            .profile img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .about-content h1 {
+                font-size: 35px;
+            }
+
+            .about-content p {
+                font-size: 15px;
+            }
+
+            .btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                flex-direction: column;
+                padding: 40px 3%;
+            }
+
+            .profile img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .about-content h1 {
+                font-size: 30px;
+            }
+
+            .about-content p {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+
+            nav {
+                padding: 15px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <img src="logo.png" class="logo" alt="Logo">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="service.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="profile">
+                <img src="portfolio photo.jpg" alt="Santu Jana">
+            </div>
+            <div class="about-content">
+                <h1>About <span>Me</span></h1>
+                <p>Hello! I'm <strong>Santu Jana</strong>, a passionate Web Developer with a strong background in
+                    front-end and back-end technologies. I specialize in creating interactive, dynamic, and
+                    user-friendly websites.</p>
+                <p>With experience in HTML, CSS, JavaScript, and Python, I focus on delivering high-quality
+                    solutions that enhance digital experiences.</p>
+                <p>Let's connect and build something amazing together!</p>
+                <a href="contact.html" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Santu Jana | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="mailto:santj261@gmail.com">📧 Email</a>
+            <a href="#">🔗 LinkedIn</a>
+            <a href="#">🐦 Twitter</a>
+            <a href="#">📘 Facebook</a>
+            <a href="#">📸 Instagram</a>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+    </script>
+
+</body>
+
+</html>
